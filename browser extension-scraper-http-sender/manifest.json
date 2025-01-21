@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Inject Test Case Script",
+  "version": "1.0",
+  "description": "Injects a script to extract and send test case data.",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/cute-chipkali-16.png",
+      "48": "icons/cute-chipkali-48.png",
+      "128": "icons/cute-chipkali-128.png"
+    },
+    "default_title": "Inject Script"
+  }
+}

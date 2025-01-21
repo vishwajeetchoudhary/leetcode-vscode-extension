@@ -1,3 +1,3 @@
-node_modules
-.vscode-test/
-*.vsix
+vscode-http-server/node_modules
+vscode-http-server/.vscode-test/
+vscode-http-server/*.vsix
