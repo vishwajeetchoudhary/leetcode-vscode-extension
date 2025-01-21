@@ -1,65 +1,74 @@
-# vscode-http-server README
+# VSCode LeetCode CPH Extension
 
-This is the README for your extension "vscode-http-server". After writing up a brief description, we recommend including the following sections.
-
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+A powerful VSCode extension that integrates LeetCode with Competitive Programming Helper (CPH). This extension streamlines the process of fetching LeetCode test cases and running them directly within VSCode using Docker for execution. Ideal for competitive programmers looking to enhance their productivity.
 
 ---
 
-## Working with Markdown
+## Features
 
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+- **Fetch LeetCode Test Cases**: Automatically fetch test cases from LeetCode problems using the provided browser extension.
+- **Code Execution**: Compile and execute code snippets directly within VSCode using Docker.
+- **Test Case Viewer**: View and edit test cases in a convenient webview.
+- **Integrated Workflow**: Seamless integration between LeetCode, test case fetching, and code execution in VSCode.
+---
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
+## Installation
 
-## For more information
+### 1. Prerequisites
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+- **Docker**: Ensure Docker is installed and running on your machine. [Install Docker](https://www.docker.com/products/docker-desktop)
+- **VSCode**: Install Visual Studio Code. [Download VSCode](https://code.visualstudio.com/)
+- **Node.js**: Required for running the extension server. [Install Node.js](https://nodejs.org/)
 
-**Enjoy!**
+### 2. Extension Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+2. Open the cloned repository in VSCode.
+3. Run the following commands in the terminal to install dependencies:
+   ```bash
+   npm install
+   ```
+4. Press `F5` in VSCode to start debugging and run the extension.
+
+### 3. Browser Extension Installation
+
+1. Navigate to the browser extension folder and load it as an unpacked extension:
+   - For Chrome: Go to `chrome://extensions` → Enable "Developer mode" → Click "Load unpacked" → Select the browser extension folder.
+
+---
+
+## Usage
+
+### 1. Fetch Test Cases from LeetCode
+
+1. Open a LeetCode problem in your browser.
+2. Click on the browser extension icon to fetch the test cases.
+3. The test cases will be sent to the local server and appear in the VSCode test case viewer.
+
+### 2. Run Code with Test Cases
+
+1. Write your solution in the VSCode editor.
+2. Use the `Run Test Cases` command to compile and execute your code against the fetched test cases.
+3. View the output in the webview panel within VSCode.
+
+
+---
+
+## Technical Details
+
+### How It Works
+
+1. **Test Case Fetching**:
+   - The browser extension scrapes test cases from the LeetCode webpage and sends them to a local Express server.
+2. **Test Case Management**:
+   - The server manages test cases in memory and updates the VSCode webview dynamically.
+3. **Code Execution**:
+   - User code and test case input are saved to files.
+   - Docker compiles and executes the code within a containerized environment.
+4. **Webview Panel**:
+   - Displays fetched test cases, allows code editing, and shows execution results.
+
+---
